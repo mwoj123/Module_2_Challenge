@@ -115,18 +115,16 @@ def save_qualifying_loans(qualifying_loans):
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
     if len(qualifying_loans) >= 1:
-        question_to_save = questionary.text('Would you like to save your results as a CSV file? Reply "Yes" or "No".').ask()
-        if question_to_save == "Yes" or "yes":
+        question_to_save = questionary.select('Would you like to save your results as a CSV file?', choices=["Yes", "No"]).ask()
+        if question_to_save == "Yes":
             csvpath = questionary.text('Where would you like to save your CSV file?').ask()
             csvpath = Path(csvpath)
-            return csvpath
-        elif question_to_save == "No" or "no":
-            sys.exit("Thank you, have a nice day.")
+            if not csvpath.exists():
+                sys.exit(f"Oops! Can't find this path: {csvpath}")
         else:
-            sys.exit("Error. Please try again.")
+            sys.exit("Thank you, your qualifying loans will not be saved. Have a nice day.")
     else:
-        sys.exit("Sorry, there are no qualifying loans.")
-        
+        sys.exit("Sorry, you have no qualifying loans.")
     return save_csv(csvpath, qualifying_loans) 
 
 
@@ -139,7 +137,7 @@ def save_qualifying_loans(qualifying_loans):
 
 
 
-#def run():
+def run():
     """The main function for running the script."""
 
     # Load the latest Bank data
@@ -157,5 +155,5 @@ def save_qualifying_loans(qualifying_loans):
     save_qualifying_loans(qualifying_loans)
 
 
-#if __name__ == "__main__":
+if __name__ == "__main__":
     fire.Fire(run)
