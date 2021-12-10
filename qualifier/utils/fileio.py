@@ -30,7 +30,7 @@ def load_csv(csvpath):
     return data
 
 
-def save_csv(csvpath, qualifying_loans):
+def save_csv(csvpath, data, header=None):
     """Indicates path to write and save the csv file
     
     Args: 
@@ -42,8 +42,9 @@ def save_csv(csvpath, qualifying_loans):
     with open(csvpath, "w", newline='') as csvfile:
         csvwriter = csv.writer(csvfile, delimiter=",")
         #Write header first
-        #csvwriter.writerow(header)
+        if header:
+            csvwriter.writerow(header)
         #Write data rows
-        for row in qualifying_loans:
+        for row in data:
             csvwriter.writerow(row)
 
