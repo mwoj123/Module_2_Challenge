@@ -13,7 +13,7 @@ from pathlib import Path
 import csv
 
 
-from qualifier.utils.fileio import load_csv
+from qualifier.utils.fileio import load_csv, save_csv
 
 from qualifier.utils.calculators import (
     calculate_monthly_debt_ratio,
@@ -106,27 +106,6 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
     return bank_data_filtered
 
 
-#Work thus far**************
-
-def save_csv(csvpath, qualifying_loans):
-    """Indicates path to write and save the csv file
-    
-    Args: csvpath (Path): The csv file path.
-    
-    """
-    with open(csvpath, "w", newline='') as csvfile:
-        csvwriter = csv.writer(csvfile, delimiter=",")
-        #Write header first
-        #csvwriter.writerow(header)
-        #Write data rows
-        for row in qualifying_loans:
-            csvwriter.writerow(row.values())
-
-
-
-
-
-
 
 def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
@@ -135,10 +114,32 @@ def save_qualifying_loans(qualifying_loans):
         qualifying_loans (list of lists): The qualifying bank loans.
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
-    # YOUR CODE HERE!
-    #return save_csv(csvpath, qualifying_loans) **Guessing????? Saved 12/7
+    if len(qualifying_loans) >= 1:
+        question_to_save = questionary.text('Would you like to save your results as a CSV file? Reply "Yes" or "No".').ask()
+        if question_to_save == "Yes" or "yes":
+            csvpath = questionary.text('Where would you like to save your CSV file?').ask()
+            csvpath = Path(csvpath)
+            return csvpath
+        elif question_to_save == "No" or "no":
+            sys.exit("Thank you, have a nice day.")
+        else:
+            sys.exit("Error. Please try again.")
+    else:
+        sys.exit("Sorry, there are no qualifying loans.")
+        
+    return save_csv(csvpath, qualifying_loans) 
 
-def run():
+
+
+
+
+
+
+
+
+
+
+#def run():
     """The main function for running the script."""
 
     # Load the latest Bank data
@@ -156,5 +157,5 @@ def run():
     save_qualifying_loans(qualifying_loans)
 
 
-if __name__ == "__main__":
+#if __name__ == "__main__":
     fire.Fire(run)
