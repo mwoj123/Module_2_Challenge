@@ -50,12 +50,19 @@ If there are qualifying loans, the application will ask the user whether they wa
 
 ![output](images/Output.PNG)
 
+The user can also decline to save the file:
+
+![decline](images/decline.PNG)
 
 ---
 
 ## Contributors
 
+This project was created by Matt Wojichowski with the guidance of the University of Washington 2021-2022 FinTech Bootcamp Class
+[Matt Wojichowski LinkedIn](https://www.linkedin.com/in/matt-wojichowski-cfa-caia-93a34a42/)
 
 ---
 
 ## License
+
+MIT
