@@ -39,7 +39,7 @@ To use the application, clone the repository and run the application with the fo
   python app.py
 ```
 Upon running, you will be asked to enter a file path to obtain the daily rate sheet:
-![Data Read](Images/cli.png)
+![Data Read](images/readcsv.png)
 
 
 ---
