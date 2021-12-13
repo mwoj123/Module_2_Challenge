@@ -35,7 +35,8 @@ def save_csv(csvpath, data, header=None):
     
     Args: 
     csvpath (Path): The csv file path.
-    qualifying_loans: list of rows of qualifying loans
+    data: data to be saved
+    header: If required, indicate the header for the data
         
     
     """
