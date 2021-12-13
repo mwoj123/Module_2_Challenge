@@ -8,11 +8,11 @@ This project is designed to provide a user the ability to filter a list of loans
 
 This program utilizes Python 3.7 with the following packages:
 
-    * [Fire](https://github.com/google/python-fire) to create a CLI (command line interface) in order to improve usabiltiy and debugging of code
-    * [Questionary](https://github.com/tmbo/questionary) to build interactive CLIs to obtain user input 
-    * [csv](https://docs.python.org/3.7/library/csv.html) to read and write CSV files
-    * [sys](https://docs.python.org/3/library/sys.html) to allow quick exit of the program if certain conditions are met
-    * [Path](https://docs.python.org/3.7/library/pathlib.html) from pathlib library to create a location for a file on your computer
+- [Fire](https://github.com/google/python-fire) to create a CLI (command line interface) in order to improve usabiltiy and debugging of code
+- [Questionary](https://github.com/tmbo/questionary) to build interactive CLIs to obtain user input 
+- [csv](https://docs.python.org/3.7/library/csv.html) to read and write CSV files
+- [sys](https://docs.python.org/3/library/sys.html) to allow quick exit of the program if certain conditions are met
+- [Path](https://docs.python.org/3.7/library/pathlib.html) from pathlib library to create a location for a file on your computer
 
 ---
 
