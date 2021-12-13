@@ -39,11 +39,14 @@ def save_csv(csvpath, data, header=None):
         
     
     """
+    # Indicate intention to save csv file by using 'w' and csv.writer
     with open(csvpath, "w", newline='') as csvfile:
         csvwriter = csv.writer(csvfile, delimiter=",")
-        #Write header first
+
+        # Write header first, if applicable
         if header:
             csvwriter.writerow(header)
+
         #Write data rows
         for row in data:
             csvwriter.writerow(row)

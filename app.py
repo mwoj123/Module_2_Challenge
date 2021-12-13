@@ -106,7 +106,6 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
     return bank_data_filtered
 
 
-
 def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
 
@@ -115,16 +114,23 @@ def save_qualifying_loans(qualifying_loans):
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
 
+    # Header of CSV file to be saved if desired by user
     header = ['Lender','Max Loan Amount' , 'Max LTV' , 'Max DTI' , 'Min Credit Score' , 'Interest Rate']
+
+    # If there are any loans the user qualifies for, ask user whether they would like to save thew results as a CSV. 
     if len(qualifying_loans) >= 1:
-        question_to_save = questionary.select('Would you like to save your results as a CSV file?', choices=["Yes", "No"]).ask()
-        if question_to_save == "Yes":
+        question_to_save = questionary.confirm('Would you like to save your results as a CSV file?').ask()
+
+        # Ask the user where to save CSV file if they would like to save it
+        if question_to_save == True:
             csvpath = questionary.text('Where would you like to save your CSV file?').ask()
             csvpath = Path(csvpath)
-            #if not csvpath.exists():
-                #sys.exit(f"Oops! Can't find this path: {csvpath}") Keep this?
+
+        # Exit the program if the user does not want to save the results
         else:
             sys.exit("Thank you, your qualifying loans will not be saved. Have a nice day.")
+    
+    # If there are no qualifying loans, notify the user and exit the program
     else:
         sys.exit("Sorry, you have no qualifying loans.")
     return save_csv(csvpath, qualifying_loans, header)
@@ -149,5 +155,6 @@ def run():
     save_qualifying_loans(qualifying_loans)
 
 
+# Run program using CLI
 if __name__ == "__main__":
     fire.Fire(run)
