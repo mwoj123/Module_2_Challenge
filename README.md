@@ -42,6 +42,14 @@ Upon running, you will be asked to enter a file path to obtain the daily rate sh
 
 ![Data Read](images/readcsv.PNG)
 
+Once the appropriate file path is entered, the application will read the data in the file and then prompt the user to answer the following questions in order to determine how many loans they qualify for:
+
+![Questions](images/input_data.PNG)
+
+If there are qualifying loans, the application will ask the user whether they want to save the file, and what file path to save it in:
+
+![output](images/Output.PNG)
+
 
 ---
 
