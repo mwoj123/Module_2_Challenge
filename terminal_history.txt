@@ -1,0 +1,50 @@
+  445  git status
+  446  git add app.py
+  447  git status
+  448  python app.py
+  449  git status
+  450  git add app.py
+  451  python app.py
+  452  git status
+  453  git add README.md
+  454  git add qualifier/utils/fileio
+  455  git add qualifier/utils/fileio.py
+  456  git status
+  457  git commit -m "Revised READ ME and Save Qual Loan Function to include descriptions"
+  458  git add
+  459  git push
+  460  git status
+  461  git add README.md
+  462  git commit -m "Revised README to include image"
+  463  git push
+  464  git status
+  465  git add images/
+  466  git status
+  467  git commit -m "images"
+  468  git push
+  469  git add README.me
+  470  git add README.md
+  471  git commit -m "README"
+  472  git push
+  473  git status
+  474  git status
+  475  git add README.md
+  476  git commit -m "Read me edits"
+  477  git push
+  478  git add README.md
+  479  git commit -m "Revised README"
+  480  git push
+  481  python app.py
+  482  git status
+  483  git add images/decline.PNG
+  484  git add README.md
+  485  git commit -m "images update and README update"
+  486  git push
+  487  git status
+  488  git add README.md
+  489  git commit -m "Finalized README with license"
+  490  git push
+  491  git add README.md
+  492  git commit -m "Edited contributors section - minor edit"
+  493  git push
+  494  history 50 > terminal_history.txt
